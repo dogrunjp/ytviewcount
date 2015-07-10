@@ -27,7 +27,7 @@ YOUTUBE_ANALYTICS_API_VERSION = "v1"
 
 ##  your own parameters
 # Native aplication client JSON
-CLIENT_SECRETS_FILE = "client_secret.json"
+CLIENT_SECRETS_FILE = ""
 # API_KEY is Public API acess key
 API_KEY = ""
 JSON_NAME = datetime.now().strftime('%Y-%m-%d') + "_viewcount.json"

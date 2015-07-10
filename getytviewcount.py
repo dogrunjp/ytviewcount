@@ -160,8 +160,8 @@ if __name__ == "__main__":
     (youtube, youtube_analytics) = get_authenticated_service(args)
     try:
         channel_id = get_channel_id(youtube)
-        # channel_idは取得できている模様
         # run_analytics_report(youtube_analytics, channel_id, args)
+        # ↑のコメントアウトをはずし関数を呼び出すとコンソールで確認できます。
         get_analytics_json(youtube_analytics, channel_id, args)
     except HttpError, e:
         print "An HTTP error %d occurred:\n%s" %(e.resp.status, e.content)

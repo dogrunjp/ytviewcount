@@ -139,7 +139,6 @@ def get_analytics_json(youtube_analytics, channel_id, options):
     with open(JSON_NAME, 'w') as f:
             json.dump(viewcount, f, ensure_ascii=False)
 
-
 if __name__ == "__main__":
     now = datetime.now()
     one_day_ago = (now - timedelta(days=1)).strftime("%Y-%m-%d")

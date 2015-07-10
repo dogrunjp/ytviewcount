@@ -29,7 +29,7 @@ YOUTUBE_ANALYTICS_API_VERSION = "v1"
 # Native aplication client JSON
 CLIENT_SECRETS_FILE = "client_secret.json"
 # API_KEY is Public API acess key
-API_KEY = "AIzaSyAymoW__kpAvP6r9gcBMz2c13Dhz-OiNJg"
+API_KEY = ""
 JSON_NAME = datetime.now().strftime('%Y-%m-%d') + "_viewcount.json"
 
 # This variable defines a message to display if the CLIENT_SECRETS_FILE is missing.

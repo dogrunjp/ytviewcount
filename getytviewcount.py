@@ -27,9 +27,9 @@ YOUTUBE_ANALYTICS_API_VERSION = "v1"
 
 ##  your own parameters
 # Native aplication client JSON
-CLIENT_SECRETS_FILE = ""
+CLIENT_SECRETS_FILE = "client_secret.json"
 # API_KEY is Public API acess key
-API_KEY = ""
+API_KEY = "AIzaSyAymoW__kpAvP6r9gcBMz2c13Dhz-OiNJg"
 JSON_NAME = datetime.now().strftime('%Y-%m-%d') + "_viewcount.json"
 
 # This variable defines a message to display if the CLIENT_SECRETS_FILE is missing.
@@ -134,6 +134,7 @@ def get_analytics_json(youtube_analytics, channel_id, options):
         item = json.load(response)
         title = item["items"][0]["snippet"]["title"]
         dct["title"] = title
+        dct["url"] = "<a href='https://www.youtube.com/watch?v=%s'>https://www.youtube.com/watch?v=%s</a>" % (id, id)
         viewcount.append(dct)
 
     with open(JSON_NAME, 'w') as f:
@@ -143,12 +144,13 @@ if __name__ == "__main__":
     now = datetime.now()
     one_day_ago = (now - timedelta(days=1)).strftime("%Y-%m-%d")
     one_week_ago = (now - timedelta(days=7)).strftime("%Y-%m-%d")
+    one_month_ago = (now -timedelta(days=31)).strftime("%Y-%m-%d")
 
     argparser.add_argument("--metrics", help="Report metrics",
-                           default="views,comments,favoritesAdded,favoritesRemoved,likes,dislikes,shares")
+                           default="views")
     argparser.add_argument("--dimensions", help="Report dimensions",
                            default="video")
-    argparser.add_argument("--start-date", default=one_week_ago,
+    argparser.add_argument("--start-date", default=one_month_ago,
                            help="Start date, in YYYY-MM-DD format")
     argparser.add_argument("--end-date", default=one_day_ago,
                            help="End date, in YYYY-MM-DD format")

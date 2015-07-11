@@ -9,8 +9,8 @@ Pythonのアプリケーションです。Python2.7な環境でテストして�
 YouTube Analytics APIとYouTube Data API v3を利用するので、
 Google Developers Consoleで自分の管理するアカウントにアプリケーションを作りこの２つのAPIを有効にしておく必用があります。
 
-また、YT Analytics APIはOAuth2.0なので認証情報（ネイティブクライアント=NaClのもの）のJSONをダウンロードしておく必用があります。
-あと、video idからタイトルの取得にData APIを利用していますが、こちらは公開APIのAPIキーが必用です。どちらもGoogle Developer Consoleで取得できます。
+また、YT Analytics APIはOAuth2.0なので認証情報（ネイティブクライアント=NaClのもの）のJSONをダウンロードし、アプリケーションから参照できる場所に置いておく必用があります（アプリケーション内では"CLIENT_SECRETS_FILE"として参照しています）。
+あと、video idからタイトルの取得にData APIを利用していますが、こちらは公開APIのAPIキーが必用です（アプリケーションでAPI_KEYに格納される文字列です）。どちらもGoogle Developer Consoleで取得できます。
 
 ## サーバでの認証
 Macでこのアプリケーションを最初に起動すると、認証のためブラウザが起動し、Googleアカウントの認証を行います。
